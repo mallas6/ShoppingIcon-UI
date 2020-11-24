@@ -1,0 +1,32 @@
+<div> class="content">
+
+    <div style="margin-top: 100px"> Products
+
+        <mat-grid-list cols="6" rowHeight="300px">
+            <div *ngFor="let p of products">
+                <!-- <mat-grid-tile *ngFor="let p of products"> -->
+
+                <mat-card>
+                    <mat-card-title>{{p.productName}} </mat-card-title>
+                    <a [routerLink]="['/details', p.productId]">Details</a>
+
+                    <div class="content">
+                        price: Rs/- {{ p.prize}}
+
+                    </div>
+                    <div>
+                        <mat-card-actions>
+                            <button mat-raised-button class="button-color" (click)="addToCart(i,p.id)"> Add to
+                                Cart</button>
+                            <button mat-raised-button class="button-color" (click)="addToCart(i,p.id)">Buy</button>
+
+                        </mat-card-actions>
+                    </div>
+                </mat-card>
+            </div>
+            <!-- </mat-grid-tile> -->
+
+        </mat-grid-list>
+
+    </div>
+</div>
